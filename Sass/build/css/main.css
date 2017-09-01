@@ -1,0 +1,187 @@
+/* Variables and Global */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* Container */
+#container {
+  min-width: 1100px;
+  width: 60%;
+  height: auto;
+  margin: auto;
+  position: relative;
+  background-color: #FFF; }
+
+/* Section and Header */
+section {
+  position: relative;
+  margin: auto; }
+  section.left, section.right {
+    width: 50%;
+    height: 100%; }
+  section.head-image {
+    width: 100%;
+    height: 525px;
+    background-color: #AAA;
+    background-image: url("../../../../images/medium/stairs.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: none; }
+
+header {
+  position: relative;
+  height: 600px;
+  font-family: 'Roboto', sans-serif; }
+  header section.left, header section.right {
+    position: absolute;
+    background-repeat: none;
+    background-position: center;
+    background-size: cover; }
+  header section.left {
+    left: 0;
+    color: #EEE;
+    background-color: #505050;
+    text-align: center;
+    font-size: 1.2em; }
+    header section.left h1 {
+      padding-top: 275px; }
+    header section.left p {
+      width: 50%;
+      margin: auto; }
+  header section.right {
+    right: 0; }
+    header section.right div.paragraph {
+      width: 100%;
+      display: block;
+      clear: both;
+      padding-top: 25px;
+      color: #505050; }
+      header section.right div.paragraph.left img {
+        float: left;
+        margin: 0 15px 0 40px; }
+      header section.right div.paragraph.right img {
+        float: right;
+        margin: 0 40px 0 15px; }
+      header section.right div.paragraph.left p {
+        text-align: left; }
+      header section.right div.paragraph.right p {
+        text-align: right; }
+      header section.right div.paragraph p {
+        padding-top: 16.25px;
+        font-size: 1.2em; }
+      header section.right div.paragraph img {
+        width: 75px;
+        height: 75px; }
+
+/* Main */
+main {
+  width: 100%;
+  height: auto;
+  margin-top: 25px; }
+  main section {
+    clear: both;
+    width: 100%;
+    display: inline-block; }
+    main section p {
+      padding-bottom: 25px; }
+    main section h2 {
+      padding-top: 50px;
+      padding-bottom: 40px;
+      text-align: center; }
+    main section.left, main section.right {
+      box-sizing: border-box;
+      width: 50%;
+      padding: 0 10px 0 10px; }
+    main section.right {
+      float: right; }
+
+h1, h2, a {
+  font-family: 'Roboto', sans-serif; }
+
+/* Footer */
+footer {
+  width: 100%;
+  padding: 25px 0 25px 0;
+  text-align: center;
+  color: #EEE;
+  background-color: #505050;
+  font-size: 1.2em;
+  font-family: 'Roboto', sans-serif; }
+
+/* Center */
+center {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding-top: 25%;
+  margin: auto; }
+
+/* Background images */
+.bg1 {
+  background-image: url("../../../../images/medium/kyoto1.jpg"); }
+
+.bg2 {
+  background-image: url("../../../../images/medium/kyoto3.jpg"); }
+
+/* Background filler */
+.filler {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: auto; }
+  .filler.dark {
+    background-color: rgba(75, 75, 75, 0.95); }
+  .filler.white {
+    background-color: rgba(255, 255, 255, 0.9); }
+  .filler center {
+    padding-top: 18%; }
+
+/* Rows */
+section .rows {
+  width: 35%; }
+
+.row {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  background-color: #AAA;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 1.5em; }
+
+a:hover {
+  background-color: #CCC; }
+a:active {
+  background-color: #CC9; }
+
+/* Boxes */
+.box {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  clear: both;
+  background-color: #FFF; }
+  .box.left {
+    float: left; }
+  .box.right {
+    float: right; }
+  .box.offset {
+    margin: 25px 25px 0 25px; }
+  .box.trans {
+    background-color: rgba(255, 255, 255, 0.7); }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.fix {
+  width: 62%;
+  height: 245px;
+  position: absolute;
+  right: 0; }
+
+/*# sourceMappingURL=main.css.map */

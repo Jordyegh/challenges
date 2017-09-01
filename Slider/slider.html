@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Slider</title>
+    <link rel="stylesheet" href="design.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Slider:</h1>
+    </header>
+    <main>
+      <div class="slider push-top">
+        <img class="slide" src="../../images/medium/kyoto4.jpg">
+        <img class="slide" src="../../images/medium/kyoto3.jpg">
+        <img class="slide" src="../../images/medium/kyoto2.jpg">
+        <img class="slide" src="../../images/medium/kyoto1.jpg">
+        <button class="button absolute set-left" onclick="toggle(-1)">&lt;</button>
+        <button class="button absolute set-right" onclick="toggle(1)">&gt;</button>
+      </div>
+
+      <p class="font push-top text-center big">Use the &lt;A&gt;, &lt;D&gt;, &lt;Left Arrow&gt; or &lt;Right Arrow&gt; keys to change picture</p>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
