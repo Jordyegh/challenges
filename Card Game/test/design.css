@@ -1,0 +1,44 @@
+body{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#enemy{
+  width: 100px;
+  height: 75px;
+  text-align: center;
+  background-color: #900;
+  color: #FFF;
+}
+
+#player{
+  width: 100px;
+  height: 75px;
+  text-align: center;
+  background-color: #090;
+  color: #FFF;
+}
+
+.minions{
+  display: flex;
+  width: 75vw;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.card{
+  width: 200px;
+  padding: 10px;
+  background-color: #CCC;
+  border-radius: 15px;
+}
+
+.friendly{
+  background-color: #090;
+}
+
+.enemy{
+  background-color: #900;
+}

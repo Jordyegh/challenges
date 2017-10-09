@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CardGame</title>
+    <link rel="stylesheet" href="build/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="build/js/script.js"></script>
+  </head>
+  <body onload="first()" class='scrollbar'>
+    <main>
+      <section class="deck">
+        <div class="container">
+          <div class="button clear-deck" onclick="clearDeck()">Clear Entire Deck</div>
+          <div class="button auto-generate" onclick="autoGenerate()">Auto Generate Deck</div>
+          <div class="button finish-deck" onclick="finishDeck()">Complete Deck</div>
+        </div>
+        <h1 class="deck-title">Player 1 Deck:</h1>
+        <div class="deck-cards">
+        </div>
+      </section>
+      <section class="decklist">
+      </section>
+    </main>
+  </body>
+</html>

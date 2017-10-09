@@ -1,0 +1,217 @@
+/* ============ Variables ============ */
+/* ============ Global ============ */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* ============ Body ============ */
+body {
+  font-family: 'Roboto', sans-serif; }
+  body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #C0B524;
+    background-image: url("../../images/bg/Noise.png"); }
+  body::-webkit-scrollbar {
+    width: 10px; }
+  body::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg/Noise.png"); }
+
+/* ============ Card ============ */
+.card {
+  display: flex;
+  width: 250px;
+  min-width: 250px;
+  height: auto;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding: 5px;
+  background-color: #C0B524;
+  color: #FFF;
+  transition: 0.2s;
+  background-image: url("../../images/bg/Noise.png");
+  cursor: pointer;
+  /* Highlight */
+  /* Card title */
+  /* Card image */
+  /* Card statistics */
+  /* Description */
+  /* Race */ }
+  .card .highlight {
+    padding: 1px 2px;
+    border-radius: 2px;
+    color: #FFF;
+    background-color: #000;
+    line-height: 26px;
+    font-weight: 100; }
+  .card .title {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg/Noise.png");
+    font-size: 120%;
+    overflow: hidden;
+    word-wrap: normal; }
+    .card .title .name {
+      font-weight: 900; }
+  .card .image {
+    width: 100%;
+    height: 227.2727272727px;
+    font-size: 0; }
+    .card .image img {
+      width: 100%;
+      height: 100%; }
+  .card .stats {
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+    box-sizing: border-box;
+    justify-content: space-around;
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg/Noise.png");
+    font-size: 150%; }
+    .card .stats .attack, .card .stats .bruteforce, .card .stats .health {
+      width: 25%;
+      height: 100%;
+      padding: 5px 0;
+      text-align: center;
+      border-radius: 5px;
+      background-color: rgba(25, 25, 25, 0.2);
+      transition: 0.3s; }
+      .card .stats .attack:hover, .card .stats .bruteforce:hover, .card .stats .health:hover {
+        background-color: rgba(200, 200, 200, 0.3); }
+  .card .description {
+    width: 100%;
+    height: 155px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #FFF;
+    background-image: url("../../images/bg/Noise.png");
+    color: #000;
+    line-height: 20.35px;
+    font-size: 110%;
+    font-weight: 900;
+    overflow-y: scroll; }
+    .card .description::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #F5F5F5; }
+    .card .description::-webkit-scrollbar {
+      width: 3px; }
+    .card .description::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #000; }
+    .card .description p {
+      padding: 5px 5px;
+      border-bottom: 2px solid #000; }
+    .card .description p:nth-child(2), .card .description p:nth-child(3) {
+      padding-top: 7px; }
+    .card .description p:nth-child(3) {
+      border-bottom: 0; }
+  .card .race {
+    width: 100%;
+    text-align: center;
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg/Noise.png");
+    font-style: oblique; }
+  .card.spell {
+    background-color: #2488C0; }
+    .card.spell .title, .card.spell .race {
+      background-color: #9B2A99; }
+  .card.legendary {
+    background-color: #ABABAB; }
+    .card.legendary .title, .card.legendary .race, .card.legendary .stats {
+      background-color: #8E8E8E; }
+
+/* ============ Deck selection ============ */
+.deck-selection {
+  display: flex; }
+
+.deck-title {
+  width: 85%;
+  text-align: center;
+  background-color: #222;
+  font-size: 125%; }
+  .deck-title p {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #9B2A2A;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: #FFF;
+    background-image: url("../../images/bg/Noise.png"); }
+
+/* ============ Deck buttons ============ */
+.deck-building-buttons {
+  display: flex;
+  width: 85%;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #C0B524;
+  background-image: url("../../images/bg/Noise.png");
+  font-size: 2em; }
+  .deck-building-buttons .button {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg/Noise.png");
+    color: #FFF;
+    transition: 0.3s; }
+    .deck-building-buttons .button:hover {
+      background-color: #2488C0;
+      cursor: pointer; }
+    .deck-building-buttons .button:active {
+      background-color: #9B2A99; }
+    .deck-building-buttons .button.finish-deck {
+      background-color: #666;
+      cursor: not-allowed; }
+      .deck-building-buttons .button.finish-deck:hover {
+        background-color: #444; }
+
+/* ============ Deck ============ */
+.deck {
+  display: flex;
+  width: 85%;
+  min-height: 100vh;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 50px 15px;
+  background-color: #222; }
+
+/* ============ Decklist ============ */
+.decklist {
+  display: flex;
+  width: 15%;
+  height: 100vh;
+  padding: 5px 25px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #444; }
+  .decklist .row {
+    width: 100%;
+    height: 3.3333333333%;
+    padding: 2px 0;
+    margin: 5px 0;
+    text-align: center;
+    background-color: #C0B524;
+    background-image: url("../../images/bg/Noise.png");
+    border-radius: 25px;
+    font-size: 100%;
+    font-weight: 900; }
+    .decklist .row:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+      box-shadow: 0px 0px 15px 10px #000; }
+
+/*# sourceMappingURL=main.css.map */

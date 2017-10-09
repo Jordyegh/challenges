@@ -1,0 +1,141 @@
+/* ============ Card ============ */
+.card{
+  display: flex;
+  width: $card-width;
+  min-width: $card-width;
+  height: auto;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding: 5px;
+  background-color: $card-default-bg-color;
+  color: $font-main-color;
+  transition: 0.2s;
+  background-image: $bg-image;
+  cursor: pointer;
+
+  /* Highlight */
+  .highlight{
+    padding: 1px 2px;
+    border-radius: 2px;
+    color: #FFF;
+    background-color: #000;
+    line-height: 26px;
+    font-weight: 100;
+  }
+  /* Card title */
+  .title{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: $card-default-front-color;
+    background-image: $bg-image;
+    font-size: 120%;
+    overflow: hidden;
+    word-wrap: normal;
+
+    .name{
+      font-weight: 900;
+    }
+  }
+  /* Card image */
+  .image{
+    width: 100%;
+    height: $card-width / 1.1;
+    font-size: 0;
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  /* Card statistics */
+  .stats{
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+    box-sizing: border-box;
+    justify-content: space-around;
+    background-color: $card-default-front-color;
+    background-image: $bg-image;
+    font-size: 150%;
+
+    .attack, .bruteforce, .health{
+      width: 25%;
+      height: 100%;
+      padding: 5px 0;
+      text-align: center;
+      border-radius: 5px;
+      background-color: rgba(25,25,25,0.2);
+      transition: 0.3s;
+
+      &:hover{
+        background-color: rgba(200,200,200,0.3);
+      }
+    }
+  }
+  /* Description */
+  .description{
+    width: 100%;
+    height: $card-width * 0.62;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: $card-description-bg-color;
+    background-image: $bg-image;
+    color: $card-description-font-color;
+    line-height: $card-width * 0.0814; //25px
+    font-size: 110%; //1.1em
+    font-weight: 900;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar-track
+    {
+    	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    	background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar
+    {
+    	width: 3px;
+    }
+    &::-webkit-scrollbar-thumb
+    {
+    	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    	background-color: #000;
+    }
+
+    p{
+      padding: 5px 5px;
+      border-bottom: 2px solid #000;
+    }
+    p:nth-child(2), p:nth-child(3){
+      padding-top: 7px;
+    }
+    p:nth-child(3){
+      border-bottom: 0;
+    }
+  }
+  /* Race */
+  .race{
+    width: 100%;
+    text-align: center;
+    background-color: $card-default-front-color;
+    background-image: $bg-image;
+    font-style: oblique;
+  }
+  &.spell{
+    background-color: $card-spell-bg-color;
+
+    .title, .race{
+      background-color: $card-spell-front-color;
+    }
+  }
+  &.legendary{
+    background-color: $card-legend-bg-color;
+
+    .title, .race, .stats{
+      background-color: $card-legend-front-color;
+    }
+  }
+}

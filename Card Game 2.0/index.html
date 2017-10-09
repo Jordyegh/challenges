@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Card Game 2.0</title>
+    <link rel="stylesheet" href="build/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="build/js/cards.js"></script>
+    <script src="build/js/create-card.js"></script>
+    <script src="build/js/main.js"></script>
+  </head>
+  <body onload="first()">
+    <main>
+      <div class="deck-building-buttons">
+        <div class="button clear-deck" onclick="clearDeck()">Clear Entire Deck</div>
+        <div class="button auto-generate" onclick="autoGenerate()">Auto Generate Deck</div>
+        <div class="button finish-deck" onclick="finishDeck()">Complete Deck</div>
+      </div>
+      <div class="deck-title">
+        <p>Player 1 Deck:</p>
+      </div>
+      <section class="deck-selection">
+        <div class="deck">
+        </div>
+        <div class="decklist">
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

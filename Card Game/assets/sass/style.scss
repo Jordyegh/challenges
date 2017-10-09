@@ -1,0 +1,423 @@
+$card-background-color: #C0B524;
+$legendary-background-color: #ABABAB;
+$spell-background-color: #2488C0;
+$card-section-color: #9B2A2A;
+$legendary-section-color: #8E8E8E;
+$spell-section-color: #9B2A99;
+$font-color: #FFF;
+$description-background-color: #FFF;
+$font-description-color: #000;
+$card-title-color: #9B2A2A;
+$bg-image: url("../../images/bg.png");
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  &::-webkit-scrollbar
+  {
+    width: 0px;
+  }
+
+  font-family: 'Roboto', sans-serif;
+}
+
+.scrollbar{
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: $card-background-color;
+    background-image: $bg-image;
+  }
+  &::-webkit-scrollbar
+  {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: $card-section-color;
+    background-image: $bg-image;
+  }
+}
+
+main{
+  display: flex;
+  background-color: #444;
+}
+
+.battlefield{
+  display: flex;
+  height: calc(100vh - 275px);
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #CCC;
+
+  .player1-stats, .player2-stats{
+    background-color: #444;
+    color: #FFF;
+    padding: 10px;
+    font-size: 1.3em;
+    background-image: $bg-image;
+  }
+  .player1-stats{
+
+  }
+  .player2-stats{
+
+  }
+  .message{
+    height: 25px;
+    padding: 15px;
+    margin-top: 10vh;
+    text-align: center;
+    border: 5px solid $card-background-color;
+    background-color: $card-section-color;
+    color: $font-color;
+    background-image: $bg-image;
+    font-size: 1.3em;
+
+    &.next-turn{
+      width: 250px;
+      margin-top: calc((100vh - 315px) / 2);
+      padding: 5px;
+      border: 2px solid $card-background-color;
+      cursor: pointer;
+
+      &:hover{
+        background-color: #D02B2B;
+      }
+      &:active{
+        background-color: #E02C2C;
+      }
+    }
+  }
+}
+
+.cross{
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  background-image: url("../../images/Red Cross.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.card-selection{
+  height: 450px;
+  width: 50vw;
+  position: absolute;
+  left: calc(50vw - 25vw);
+  bottom: calc(50vh - 20vh);
+  border: 5px solid $card-background-color;
+  background-color: $card-section-color;
+  color: $font-color;
+  background-image: $bg-image;
+  font-size: 1.3em;
+  color: #FFF;
+  text-align: center;
+
+  .accept-button{
+    display: inline-block;
+    margin: auto;
+    margin-top: 25px;
+    padding: 10px 50px;
+    background-color: #0C0;
+    background-image: $bg-image;
+    cursor: pointer;
+
+    &:hover{
+      box-shadow: 0px 0px 20px 5px #0F0;
+      background-color: #0A0;
+    }
+    &:active{
+      box-shadow: 0px 0px 30px 5px #0B0;
+    }
+    &.blocked{
+      cursor: not-allowed;
+      box-shadow: 0px 0px 0px;
+      background-color: #888;
+      opacity: 0.75;
+    }
+  }
+}
+
+.hand{
+  display: flex;
+  height: 275px;
+  width: 100%;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  background-color: #444;
+  background-image: $bg-image;
+}
+
+.error{
+  position: fixed;
+  width: 25%;
+  min-height: 75px;
+  padding: 15px;
+  background-color: rgba(255,0,0,0.75);
+  border-radius: 25px;
+  font-size: 2em;
+  font-weight: 900;
+  z-index: 1;
+}
+
+.container{
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: $card-background-color;
+  background-image: $bg-image;
+  font-size: 2em;
+
+  .button{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: $card-section-color;
+    background-image: $bg-image;
+    color: $font-color;
+    transition: 0.3s;
+
+    &:hover{
+      background-color: $spell-background-color;
+      cursor: pointer;
+    }
+    &:active{
+      background-color: $spell-section-color;
+    }
+    &.finish-deck{
+      background-color: #666;
+      cursor: not-allowed;
+
+      &:hover{
+        background-color: #444;
+      }
+    }
+  }
+}
+
+.ready{
+  box-shadow: 0px 0px 18px 7px #0F0;
+  background-color: #0B0!important;
+  cursor: pointer!important;
+
+  &:hover{
+    background-color: #494!important;
+  }
+}
+
+.deck{
+  display: flex;
+  width: 85%;
+  min-height: 100vh;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 10px 5px 55px 25px;
+  background-color: #222;
+
+  .deck-cards{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+  }
+
+  h1{
+    width: 30%;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-color: #FFF;
+    background-image: $bg-image;
+    transition: 0.3s;
+
+    &:hover{
+      transform: scale(1.3);
+      z-index: 1;
+    }
+  }
+}
+
+.decklist{
+  width: 15%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 5px 25px;
+  position: fixed;
+  right: 0;
+
+  .row{
+    width: 100%;
+    height: (100vh / 35);
+    box-sizing: border-box;
+    padding: 2px 0;
+    margin: 4px 0;
+    text-align: center;
+    background-color: $card-background-color;
+    background-image: $bg-image;
+    border-radius: 25px;
+    font-size: 1vw;
+    font-weight: 900;
+
+    &:hover{
+      transform: scale(1.2);
+      cursor: pointer;
+      box-shadow: 0px 0px 15px 10px #000;
+    }
+  }
+}
+
+.card{
+  min-width: 250px;
+  $width: 250px;
+
+  display: flex;
+  //width: 350px;
+  //height: 670px;
+  // * 1.91428
+  width: $width;
+  height: $width * 1.91428;
+  margin: 15px 0;
+  padding: 8px;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  background-color: $card-background-color;
+  background-image: $bg-image;
+  color: $font-color;
+  transition: 0.2s;
+
+  &:hover{
+    cursor: pointer;
+  }
+  .highlight{
+    padding: 0px 5px;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #000;
+    font-weight: 100;
+  }
+  .title{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: $card-title-color;
+    background-image: $bg-image;
+    font-size: 120%; //1.3em
+    overflow: hidden;
+    word-wrap: normal;
+
+    .name{
+      font-weight: 900;
+    }
+  }
+  .image{
+    width: 100%;
+    height: $width / 1.1;
+    box-sizing: border-box;
+    font-size: 0;
+
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .stats{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 35px 5px 35px;
+    justify-content: space-between;
+    background-color: $card-section-color;
+    background-image: $bg-image;
+    font-size: 175%; //2em
+
+    .attack{
+      color: #FF0;
+    }
+    .bruteforce{
+      color: #F80;
+    }
+    .health{
+      color: #F00;
+    }
+  }
+  .description{
+    width: 100%;
+    height: $width * 0.62;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    background-color: $description-background-color;
+    background-image: $bg-image;
+    color: $font-description-color;
+    line-height: $width * 0.0814; //25px
+    font-size: 110%; //1.1em
+    font-weight: 900;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar-track
+    {
+    	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    	background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar
+    {
+    	width: 3px;
+    }
+    &::-webkit-scrollbar-thumb
+    {
+    	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    	background-color: #000;
+    }
+
+    p{
+      padding: 5px 5px;
+      border-bottom: 2px solid #000;
+    }
+    p:nth-child(2), p:nth-child(3){
+      padding-top: 7px;
+    }
+    p:nth-child(3){
+      border-bottom: 0;
+    }
+  }
+  .race{
+    width: 100%;
+    text-align: center;
+    background-color: $card-section-color;
+    background-image: $bg-image;
+    font-style: oblique;
+  }
+  &.spell{
+    background-color: $spell-background-color;
+
+    .title, .race{
+      background-color: $spell-section-color;
+    }
+  }
+  &.legendary{
+    background-color: $legendary-background-color;
+
+    .title, .race, .stats{
+      background-color: $legendary-section-color;
+    }
+  }
+}

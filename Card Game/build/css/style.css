@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Roboto', sans-serif; }
+  body::-webkit-scrollbar {
+    width: 0px; }
+
+.scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #C0B524;
+  background-image: url("../../images/bg.png"); }
+.scrollbar::-webkit-scrollbar {
+  width: 10px; }
+.scrollbar::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #9B2A2A;
+  background-image: url("../../images/bg.png"); }
+
+main {
+  display: flex;
+  background-color: #444; }
+
+.battlefield {
+  display: flex;
+  height: calc(100vh - 275px);
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #CCC; }
+  .battlefield .player1-stats, .battlefield .player2-stats {
+    background-color: #444;
+    color: #FFF;
+    padding: 10px;
+    font-size: 1.3em;
+    background-image: url("../../images/bg.png"); }
+  .battlefield .message {
+    height: 25px;
+    padding: 15px;
+    margin-top: 10vh;
+    text-align: center;
+    border: 5px solid #C0B524;
+    background-color: #9B2A2A;
+    color: #FFF;
+    background-image: url("../../images/bg.png");
+    font-size: 1.3em; }
+    .battlefield .message.next-turn {
+      width: 250px;
+      margin-top: calc((100vh - 315px) / 2);
+      padding: 5px;
+      border: 2px solid #C0B524;
+      cursor: pointer; }
+      .battlefield .message.next-turn:hover {
+        background-color: #D02B2B; }
+      .battlefield .message.next-turn:active {
+        background-color: #E02C2C; }
+
+.cross {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  background-image: url("../../images/Red Cross.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1; }
+
+.card-selection {
+  height: 450px;
+  width: 50vw;
+  position: absolute;
+  left: calc(50vw - 25vw);
+  bottom: calc(50vh - 20vh);
+  border: 5px solid #C0B524;
+  background-color: #9B2A2A;
+  color: #FFF;
+  background-image: url("../../images/bg.png");
+  font-size: 1.3em;
+  color: #FFF;
+  text-align: center; }
+  .card-selection .accept-button {
+    display: inline-block;
+    margin: auto;
+    margin-top: 25px;
+    padding: 10px 50px;
+    background-color: #0C0;
+    background-image: url("../../images/bg.png");
+    cursor: pointer; }
+    .card-selection .accept-button:hover {
+      box-shadow: 0px 0px 20px 5px #0F0;
+      background-color: #0A0; }
+    .card-selection .accept-button:active {
+      box-shadow: 0px 0px 30px 5px #0B0; }
+    .card-selection .accept-button.blocked {
+      cursor: not-allowed;
+      box-shadow: 0px 0px 0px;
+      background-color: #888;
+      opacity: 0.75; }
+
+.hand {
+  display: flex;
+  height: 275px;
+  width: 100%;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  background-color: #444;
+  background-image: url("../../images/bg.png"); }
+
+.error {
+  position: fixed;
+  width: 25%;
+  min-height: 75px;
+  padding: 15px;
+  background-color: rgba(255, 0, 0, 0.75);
+  border-radius: 25px;
+  font-size: 2em;
+  font-weight: 900;
+  z-index: 1; }
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #C0B524;
+  background-image: url("../../images/bg.png");
+  font-size: 2em; }
+  .container .button {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg.png");
+    color: #FFF;
+    transition: 0.3s; }
+    .container .button:hover {
+      background-color: #2488C0;
+      cursor: pointer; }
+    .container .button:active {
+      background-color: #9B2A99; }
+    .container .button.finish-deck {
+      background-color: #666;
+      cursor: not-allowed; }
+      .container .button.finish-deck:hover {
+        background-color: #444; }
+
+.ready {
+  box-shadow: 0px 0px 18px 7px #0F0;
+  background-color: #0B0 !important;
+  cursor: pointer !important; }
+  .ready:hover {
+    background-color: #494 !important; }
+
+.deck {
+  display: flex;
+  width: 85%;
+  min-height: 100vh;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 10px 5px 55px 25px;
+  background-color: #222; }
+  .deck .deck-cards {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    box-sizing: border-box; }
+  .deck h1 {
+    width: 30%;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background-color: #FFF;
+    background-image: url("../../images/bg.png");
+    transition: 0.3s; }
+    .deck h1:hover {
+      transform: scale(1.3);
+      z-index: 1; }
+
+.decklist {
+  width: 15%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 5px 25px;
+  position: fixed;
+  right: 0; }
+  .decklist .row {
+    width: 100%;
+    height: 2.8571428571vh;
+    box-sizing: border-box;
+    padding: 2px 0;
+    margin: 4px 0;
+    text-align: center;
+    background-color: #C0B524;
+    background-image: url("../../images/bg.png");
+    border-radius: 25px;
+    font-size: 1vw;
+    font-weight: 900; }
+    .decklist .row:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+      box-shadow: 0px 0px 15px 10px #000; }
+
+.card {
+  min-width: 250px;
+  display: flex;
+  width: 250px;
+  height: 478.57px;
+  margin: 15px 0;
+  padding: 8px;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  background-color: #C0B524;
+  background-image: url("../../images/bg.png");
+  color: #FFF;
+  transition: 0.2s; }
+  .card:hover {
+    cursor: pointer; }
+  .card .highlight {
+    padding: 0px 5px;
+    border-radius: 5px;
+    color: #FFF;
+    background-color: #000;
+    font-weight: 100; }
+  .card .title {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg.png");
+    font-size: 120%;
+    overflow: hidden;
+    word-wrap: normal; }
+    .card .title .name {
+      font-weight: 900; }
+  .card .image {
+    width: 100%;
+    height: 227.2727272727px;
+    box-sizing: border-box;
+    font-size: 0; }
+    .card .image img {
+      width: 100%;
+      height: 100%; }
+  .card .stats {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 35px 5px 35px;
+    justify-content: space-between;
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg.png");
+    font-size: 175%; }
+    .card .stats .attack {
+      color: #FF0; }
+    .card .stats .bruteforce {
+      color: #F80; }
+    .card .stats .health {
+      color: #F00; }
+  .card .description {
+    width: 100%;
+    height: 155px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    background-color: #FFF;
+    background-image: url("../../images/bg.png");
+    color: #000;
+    line-height: 20.35px;
+    font-size: 110%;
+    font-weight: 900;
+    overflow-y: scroll; }
+    .card .description::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #F5F5F5; }
+    .card .description::-webkit-scrollbar {
+      width: 3px; }
+    .card .description::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #000; }
+    .card .description p {
+      padding: 5px 5px;
+      border-bottom: 2px solid #000; }
+    .card .description p:nth-child(2), .card .description p:nth-child(3) {
+      padding-top: 7px; }
+    .card .description p:nth-child(3) {
+      border-bottom: 0; }
+  .card .race {
+    width: 100%;
+    text-align: center;
+    background-color: #9B2A2A;
+    background-image: url("../../images/bg.png");
+    font-style: oblique; }
+  .card.spell {
+    background-color: #2488C0; }
+    .card.spell .title, .card.spell .race {
+      background-color: #9B2A99; }
+  .card.legendary {
+    background-color: #ABABAB; }
+    .card.legendary .title, .card.legendary .race, .card.legendary .stats {
+      background-color: #8E8E8E; }
+
+/*# sourceMappingURL=style.css.map */

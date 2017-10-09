@@ -1,0 +1,41 @@
+/* ============ Variables ============ */
+$card-default-bg-color: #C0B524;
+$card-default-front-color: #9B2A2A;
+$card-legend-bg-color: #ABABAB;
+$card-legend-front-color: #8E8E8E;
+$card-spell-bg-color: #2488C0;
+$card-spell-front-color: #9B2A99;
+$card-description-bg-color: #FFF;
+$card-description-font-color: #000;
+$font-main-color: #FFF;
+$bg-image: url("../../images/bg/Noise.png");
+$card-width: 250px;
+
+/* ============ Global ============ */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* ============ Body ============ */
+
+body{
+  font-family: 'Roboto', sans-serif;
+
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: $card-default-bg-color;
+    background-image: $bg-image;
+  }
+  &::-webkit-scrollbar
+  {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: $card-default-front-color;
+    background-image: $bg-image;
+  }
+}
